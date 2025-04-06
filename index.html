@@ -1,86 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>TV SERIES TS1</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TV SERIES TS1</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
     <style>
-        body {
-          font-family: Arial, sans-serif;
-        }
-    
-        .header {
-          background-color: #17a2b8;
-          color: black;
-          padding: 10px 20px;
-          display: flex;
-          align-items: center;
-        }
-    
-        .header img {
-          height: 40px;
-          margin-right: 15px;
-        }
-    
-        .table-container {
-          margin-top: 30px;
-        }
-    
-        .table thead th {
-          font-weight: bold;
-          text-align: center;
-        }
-    
-        .table tbody td {
-          vertical-align: middle;
-        }
-    
-        .table tbody td:first-child {
-          text-align: center;
-          font-weight: bold; 
-        }
-    
-        .promedio {
-          margin-top: 10px;
-          font-weight: bold;
-        }
-      </style>
-    </head>
-    <body>
-    
-      <div class="header">
-        <img src="https://cdn-icons-png.flaticon.com/512/3566/3566955.png" alt="TV Icon" />
-        <h5 class="mb-0">TV Series</h5>
-      </div>
-    
-      <div class="container-fluid mt-4">
-        <div class="row">
-          <div class="col-4">
-            <table class="table table-hover table-bordered">
-              <thead class="thead-light">
-                <tr>
-                  <th>#</th>
-                  <th>Name</th>
-                  <th>Channel</th>
-                  <th>Seasons</th>
-                </tr>
-              </thead>
-              <tbody id="serie"></tbody>
-            </table>
-    
-            <div class="row ml-1">
-              <p class="col-auto mb-0"><strong>Seasons average:</strong></p>
-              <p class="col-auto mb-0" id="promedio-temporadas"><strong></strong></p>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      .header {
+        background-color: #17a2b8;
+        color: black;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+      }
+
+      .header img {
+        height: 40px;
+        margin-right: 15px;
+      }
+
+      .table thead th {
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .table tbody td:first-child {
+        text-align: center;
+        font-weight: bold;
+      }
+
+      .promedio {
+        margin-top: 10px;
+        font-weight: bold;
+      }
+
+      #serie-card {
+        max-width: 250px;
+      }
+
+      #imagen-card {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+      }
+
+      #url-card {
+        font-size: 0.85rem;
+        word-break: break-all;
+        color: #007bff;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/3566/3566955.png"
+        alt="TV Icon"
+      />
+      <h5 class="mb-0">TV Series</h5>
+    </div>
+
+    <div class="container-fluid mt-4">
+      <div class="row">
+        <div class="col-4">
+          <table class="table table-hover table-bordered">
+            <thead class="thead-light">
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Channel</th>
+                <th>Seasons</th>
+              </tr>
+            </thead>
+            <tbody id="serie"></tbody>
+          </table>
+
+          <div class="row ml-1">
+            <p class="col-auto mb-0"><strong>Seasons average:</strong></p>
+            <p class="col-auto mb-0" id="promedio-temporadas"><strong></strong></p>
+          </div>
+        </div>
+
+        <div class="col" id="serie-detalle">
+          <div id="serie-card" class="card d-none">
+            <img id="imagen-card" src="" class="card-img-top" alt="Imagen serie" />
+            <div class="card-body">
+              <h5 class="card-title" id="nombre-card"></h5>
+              <p class="card-text" id="descripcion-card"></p>
+              <a href="#" id="url-card" target="_blank"></a>
             </div>
           </div>
         </div>
       </div>
-    
-      <script type="module" src="./scripts/Serie.js"></script>
-      <script type="module" src="./scripts/data.js"></script>
-      <script type="module" src="./scripts/main.js"></script>
-    
-    </body>
-    </html>
+    </div>
+
+    <script type="module" src="./scripts/Serie.js"></script>
+    <script type="module" src="./scripts/data.js"></script>
+    <script type="module" src="./scripts/main.js"></script>
+  </body>
+</html>
